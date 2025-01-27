@@ -1,0 +1,98 @@
+*{
+     margin: 0;/*its is good practice and beautifies the output*/
+     padding: 0;
+     box-sizing: border-box;
+}
+#wrapper{
+    height: 100vh;
+    overflow-x: hidden;/*this here keeps the image from scrolling to the right as it stops the overflow in the x direction*/
+    overflow-y: auto;/*this allows us to keep scrolling down*/
+    perspective: 10px;/*enables the z axis that helps us create the parallax efect*/
+}
+.container{
+    position: relative;/*as we want to make the other blocks as absolute so this box is given the degree of relative*/
+    display: flex;/*to create flexbox*/
+    justify-content: center;/*this and line below this brings the flexitems in center*/
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;/*this tells that this is a 3D system*/
+    z-index: -1;/*which layer comes on top of which layer*/
+}
+.background{
+    transform: translateZ(-40px)  scale(6);/*this helps us in creating the parallax effect as it first takes the image far from the perspective and then scalesit up to the size acceptable*/
+}
+.foreground{
+    transform: translateZ(-20px) scale(4);/*same work as above*/
+
+}
+.background,.foreground/*this enables us to overlap the images*/
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index:-1;/*helps in giving the text the comand to come over the overlapped image*/
+    object-fit: cover;/* the image covers full width*/
+}
+#adventure{ 
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top:5rem ;/*this fixes the heading from top*/
+    font-size: 10rem; 
+    letter-spacing: 4px;/* spacing between metters*/
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);/*this provides the transparency required by the text*/
+
+}
+.secheading {
+    font-size:5rem;
+    padding:0 10rem  ;
+}
+.text{
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin:5rem 0;
+}
+section{
+    background-color: rgb(45, 45,45);/*these values are given to a programmer*/
+    color: white;
+    padding: rem;
+    
+}
+.bg{
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover ;
+    height: 500px;
+}
+.desc{
+    position: absolute;
+    background-color:rgb(45, 45, 45);
+    color: white;
+    padding: 0.5em 2.5rem ;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3.5rem;
+    font: weight 600px; 
+}
+.bg1{/*adds image using multiple class*/
+    background-image:url("C:\Users\HP\OneDrive\Desktop\WhatsApp Image 2024-06-19 at 22.00.14_d4db1574.jpg")
+    
+}
+.bg2{
+    background-image: url(https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D);
+}
+.bg3{
+    background-image: url(https://wallpapers.com/images/hd/snow-capped-mountain-wallpaper-8p4a5kaz122z9xyn.jpg);
+}
+.bg4{
+    background-image: url(mon.jpg);
+}
+.bg5{
+    background-image: url(https://wallpapers.com/images/hd/4k-mountain-8x6juugsdwx7cifh.jpg);
+}
+.bg6{
+    background-image: url(tent.avif);
+}
